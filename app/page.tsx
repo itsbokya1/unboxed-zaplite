@@ -1,24 +1,28 @@
-﻿"use client";
+"use client";
 import React, { useState, useRef } from "react";
 
 export default function ZapLiteApp() {
-  const [file, setFile] = useState(null);
-  const [preset, setPreset] = useState("whatsapp");
-  const [status, setStatus] = useState("idle");
-  const [progress, setProgress] = useState(0);
-  const [outputStats, setOutputStats] = useState({ original: 0, final: 0, saved: 0 });
-  
-  // Paywall & Payment States
-  const [isUnlocked, setIsUnlocked] = useState(false);
-  const [showPaywall, setShowPaywall] = useState(false);
-  const [selectedPlan, setSelectedPlan] = useState("day_pass");
-  const [paymentTab, setPaymentTab] = useState("upi");
-  const [qrData, setQrData] = useState(null);
-  const [isVerifyingPayment, setIsVerifyingPayment] = useState(false);
-  
-  const fileInputRef = useRef(null);
+  const [file, setFile] = useState<File | null>(null);
+  const [preset, setPreset] = useState<string>("whatsapp");
+  const [status, setStatus] = useState<string>("idle");
+  const [progress, setProgress] = useState<number>(0);
+  const [outputStats, setOutputStats] = useState<{ original: string; final: string; saved: number }>({
+    original: "0",
+    final: "0",
+    saved: 0,
+  });
 
-  const handleFileSelect = (selectedFile) => {
+  // Paywall & Payment States
+  const [isUnlocked, setIsUnlocked] = useState<boolean>(false);
+  const [showPaywall, setShowPaywall] = useState<boolean>(false);
+  const [selectedPlan, setSelectedPlan] = useState<string>("day_pass");
+  const [paymentTab, setPaymentTab] = useState<string>("upi");
+  const [qrData, setQrData] = useState<{ qrUrl: string } | null>(null);
+  const [isVerifyingPayment, setIsVerifyingPayment] = useState<boolean>(false);
+
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
+
+  const handleFileSelect = (selectedFile: File) => {
     if (!selectedFile) return;
     setFile(selectedFile);
 
@@ -29,7 +33,7 @@ export default function ZapLiteApp() {
     }
   };
 
-  const generateUpiQR = async (plan, amount) => {
+  const generateUpiQR = async (plan: string, amount: number) => {
     try {
       const res = await fetch("/api/generate-upi-qr", {
         method: "POST",
@@ -45,7 +49,7 @@ export default function ZapLiteApp() {
     }
   };
 
-  const handlePlanChange = (plan) => {
+  const handlePlanChange = (plan: string) => {
     setSelectedPlan(plan);
     const amount = plan === "day_pass" ? 49 : 499;
     generateUpiQR(plan, amount);
@@ -71,9 +75,10 @@ export default function ZapLiteApp() {
       setProgress(current);
       if (current >= 100) {
         clearInterval(interval);
-        const origMB = (file.size / (1024 * 1024)).toFixed(1);
+        const origNum = file.size / (1024 * 1024);
+        const origMB = origNum.toFixed(1);
         const reduction = preset === "whatsapp" ? 0.15 : preset === "email" ? 0.08 : 0.35;
-        const finalMB = (origMB * reduction).toFixed(1);
+        const finalMB = (origNum * reduction).toFixed(1);
         const savedPct = Math.round((1 - reduction) * 100);
 
         setOutputStats({ original: origMB, final: finalMB, saved: savedPct });
