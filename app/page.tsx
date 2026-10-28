@@ -262,18 +262,20 @@ export default function UnboxedZapLite() {
         </div>
       )}
 
-      {/* Bokya Persona Branding Banner */}
+      {/* Signature Bokya Persona Footer */}
       <footer className="max-w-4xl mx-auto w-full pt-6 border-t border-[#143424] flex flex-col sm:flex-row items-center justify-between text-xs text-[#8FAEA0] gap-4">
         <div className="flex items-center space-x-3">
-          <div className="w-9 h-9 rounded-full bg-[#143424] border border-[#00FF88]/40 flex items-center justify-center overflow-hidden shadow-md">
-            <span className="text-base">🧔🏽‍♂️</span>
+          <div className="w-10 h-10 rounded-full bg-[#143424] border border-[#00FF88]/50 flex items-center justify-center overflow-hidden shadow-lg">
+            <span className="text-lg">🧔🏽‍♂️</span>
           </div>
           <div>
-            <p className="text-white font-semibold">Crafted with Puneri grit by Bokya</p>
-            <p className="text-[10px] text-[#8FAEA0]">Mind Unboxed Studios • Zero-Server Local Privacy Engine</p>
+            <p className="text-white font-bold tracking-wide">
+              Crafted with Puneri Grit by <span className="text-[#00FF88]">Bokya (बोक्या)</span>
+            </p>
+            <p className="text-[10px] text-[#8FAEA0]">Mind Unboxed Studios • Pune • Direct Global & UPI Rails</p>
           </div>
         </div>
-        <p className="text-[11px]">© 2026 Mind Unboxed Studios • Pune, Maharashtra</p>
+        <p className="text-[11px] font-mono text-[#00FF88]">© 2026 Bokya / Mind Unboxed</p>
       </footer>
     </main>
   );
