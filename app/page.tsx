@@ -36,7 +36,6 @@ export default function UnboxedZapLite() {
 
   return (
     <main className="min-h-screen bg-[#07130E] text-[#E2F1EC] font-sans flex flex-col justify-between p-6">
-      {/* Top Header & Navigation */}
       <header className="max-w-4xl mx-auto w-full flex items-center justify-between py-4 border-b border-[#143424]">
         <div className="flex items-center space-x-3">
           <div className="bg-[#00FF88]/10 p-2 rounded-xl border border-[#00FF88]/30 text-[#00FF88] font-bold text-lg">⚡️</div>
@@ -52,7 +51,6 @@ export default function UnboxedZapLite() {
         </div>
       </header>
 
-      {/* Main Studio Interactive Container */}
       <div className="max-w-2xl mx-auto w-full my-auto text-center space-y-8">
         <div className="space-y-3">
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
@@ -63,7 +61,6 @@ export default function UnboxedZapLite() {
           </p>
         </div>
 
-        {/* Upload / Transcode Card */}
         {!isCompleted ? (
           <div
             onDragOver={(e) => e.preventDefault()}
@@ -140,7 +137,6 @@ export default function UnboxedZapLite() {
         )}
       </div>
 
-      {/* Paywall Modal */}
       {showPaywall && !isUnlocked && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 z-50">
           <div className="bg-[#0B1D16] border border-[#1B4332] max-w-md w-full rounded-3xl p-6 space-y-6 shadow-2xl">
@@ -175,7 +171,6 @@ export default function UnboxedZapLite() {
         </div>
       )}
 
-      {/* Kotak UPI Modal */}
       {paymentMethod === "upi" && (
         <div className="fixed inset-0 bg-black/90 flex items-center justify-center p-4 z-50">
           <div className="bg-[#0B1D16] border border-[#00FF88]/40 max-w-sm w-full rounded-3xl p-6 space-y-5 text-center">
@@ -192,7 +187,6 @@ export default function UnboxedZapLite() {
         </div>
       )}
 
-      {/* Global Card Modal */}
       {paymentMethod === "global" && (
         <div className="fixed inset-0 bg-black/90 flex items-center justify-center p-4 z-50">
           <div className="bg-[#0B1D16] border border-[#00FF88]/40 max-w-sm w-full rounded-3xl p-6 space-y-5 text-center">
@@ -209,7 +203,6 @@ export default function UnboxedZapLite() {
         </div>
       )}
 
-      {/* Signature Bokya Persona Footer */}
       <footer className="max-w-4xl mx-auto w-full pt-6 border-t border-[#143424] flex flex-col sm:flex-row items-center justify-between text-xs text-[#8FAEA0] gap-4">
         <div className="flex items-center space-x-3">
           <div className="w-10 h-10 rounded-full bg-[#143424] border border-[#00FF88]/50 flex items-center justify-center shadow-lg">
@@ -217,7 +210,7 @@ export default function UnboxedZapLite() {
           </div>
           <div>
             <p className="text-white font-bold tracking-wide">
-              Crafted with Puneri Grit by <span className="text-[#00FF88]">Bokya (बोक्या)</span>
+              Crafted with Puneri grit by <span className="text-[#00FF88]">Bokya (बोक्या)</span>
             </p>
             <p className="text-[10px] text-[#8FAEA0]">Mind Unboxed Studios • Pune • Direct Global & UPI Rails</p>
           </div>
