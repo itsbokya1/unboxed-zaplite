@@ -39,7 +39,7 @@ export default function UnboxedZapLite() {
       {/* Top Header & Navigation */}
       <header className="max-w-4xl mx-auto w-full flex items-center justify-between py-4 border-b border-[#143424]">
         <div className="flex items-center space-x-3">
-          <div className="bg-[#00FF88]/10 p-2 rounded-xl border border-[#00FF88]/30 text-[#00FF88] font-bold">⚡️</div>
+          <div className="bg-[#00FF88]/10 p-2 rounded-xl border border-[#00FF88]/30 text-[#00FF88] font-bold text-lg">⚡️</div>
           <div>
             <h1 className="text-lg font-bold tracking-tight text-white">Unboxed ZapLite</h1>
             <p className="text-xs text-[#8FAEA0]">Mind Unboxed Studios • Pune, India</p>
@@ -77,7 +77,7 @@ export default function UnboxedZapLite() {
             }}
             className="border-2 border-dashed border-[#1B4332] bg-[#0B1D16] hover:border-[#00FF88] transition-all rounded-3xl p-10 flex flex-col items-center justify-center space-y-4 cursor-pointer shadow-2xl"
           >
-            <div className="p-4 bg-[#143424] rounded-2xl border border-[#225039] text-[#00FF88] font-bold text-xl">📁</div>
+            <div className="p-4 bg-[#143424] rounded-2xl border border-[#225039] text-[#00FF88] text-2xl">📁</div>
             {file ? (
               <div className="space-y-1">
                 <p className="text-sm font-semibold text-white">{file.name}</p>
