@@ -1,7 +1,7 @@
 import "./globals.css";
-import type { Metadata } from "react";
+import type { Metadata } from "metadata"; // or keep clean
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Unboxed ZapLite — Local WASM Video Transcoder",
   description: "Crafted with Puneri grit by Bokya",
 };
